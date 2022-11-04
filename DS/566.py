@@ -77,15 +77,3 @@ if __name__=="__main__":
         print("original matrix: "+str(mat)+"\t\tnew rows: "+str(r)+"\t\tnew columns: "+str(c)+"\t\toutput: "+str(reshapeM3(mat, r, c)))
     else:
         print("No method selected\n")
-
-
-    '''
-        print("nums1 array: "+str(nums11)+"  nums2 array: "+str(nums21)+"   output: "+str(intersectionM2(nums11, nums21)))
-        print("nums1 array: "+str(nums12)+"  nums2 array: "+str(nums22)+"   output: "+str(intersectionM2(nums12, nums22)))
-    elif method == 3:
-        print("nums1 array: "+str(nums11)+"  nums2 array: "+str(nums21)+"   output: "+str(intersectionM3(nums11, nums21)))
-        print("nums1 array: "+str(nums12)+"  nums2 array: "+str(nums22)+"   output: "+str(intersectionM3(nums12, nums22)))
-    elif method == 4:
-        print("nums1 array: "+str(nums11)+"  nums2 array: "+str(nums21)+"   output: "+str(intersectionM4(nums11, nums21)))
-        print("nums1 array: "+str(nums12)+"  nums2 array: "+str(nums22)+"   output: "+str(intersectionM4(nums12, nums22)))
-    '''
