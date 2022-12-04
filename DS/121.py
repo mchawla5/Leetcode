@@ -21,6 +21,9 @@ Method 1: (using DP)          Run Time: 105ms; Memory: 13.9
 Method 2: (using 2 pointers)        Run Time: 104ms; Memory: 14.2
     |_ Time Complexity = O(N)
     |_ Space Complexity = O(N)
+Method3: (Efficient DP)
+    |_ Time Complexity = O(n)
+    |_ Space Complexity = O(1)
 '''
 
 def pricesM1(prices):
@@ -55,13 +58,23 @@ def pricesM2(prices):
             diff_so_far = max(prices[i] - min_value, diff_so_far)
     return(diff_so_far)
 
+def pricesM3(prices):
+    profit = 0
+    buy = prices[0]
+    for i in range(len(prices)):
+        if buy > prices[i]:
+            buy = prices[i]
+        else:
+            profit = max(profit, prices[i]-buy)
+    return profit
+
 if __name__=="__main__":
     prices1 = [7,1,5,3,6,4]
     prices2 = [7,6,4,3,1]
     prices3 = [2,4,1]
     prices4 = [1,2,4,2,5,7,2,4,9,0]
 
-    method = int(input("Select the method you want to run:   1. Using DP   2. Using 2 Pointers   3. Efficient Dictionary   4. Efficient Counters\n"))
+    method = int(input("Select the method you want to run:   1. Using DP   2. Using 2 Pointers   3. Efficient DP\n"))
     if method == 1:
         print("prices1 array: "+str(prices1)+"   output: "+str(pricesM1(prices1) == 5))
         print("prices2 array: "+str(prices2)+"   output: "+str(pricesM1(prices2) == 0))
@@ -73,10 +86,9 @@ if __name__=="__main__":
         print("prices3 array: "+str(prices3)+"   output: "+str(pricesM2(prices3)))
         print("prices4 array: "+str(prices4)+"   output: "+str(pricesM2(prices4)))
     elif method == 3:
-        print("prices1 array: "+str(prices1)+"   output: "+str(pricesM1(prices1)))
-        print("prices2 array: "+str(prices2)+"   output: "+str(pricesM1(prices2)))
-    elif method == 4:
-        print("prices1 array: "+str(prices1)+"   output: "+str(pricesM1(prices1)))
-        print("prices2 array: "+str(prices2)+"   output: "+str(pricesM1(prices2)))
+        print("prices1 array: "+str(prices1)+"   output: "+str(pricesM3(prices1)))
+        print("prices2 array: "+str(prices2)+"   output: "+str(pricesM3(prices2)))
+        print("prices3 array: "+str(prices3)+"   output: "+str(pricesM3(prices3)))
+        print("prices4 array: "+str(prices4)+"   output: "+str(pricesM3(prices4)))
     else:
         print("No method selected\n")
